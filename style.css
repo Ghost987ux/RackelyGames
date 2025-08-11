@@ -1,0 +1,165 @@
+:root {
+  --bg: #121214;
+  --panel-bg: #1f1f23;
+  --accent: #ff4c60;
+  --text: #e4e4e7;
+  --text-muted: #888;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body, html {
+  margin: 0; padding: 0; height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+.container {
+  max-width: 960px;
+  width: 100%;
+  background: var(--panel-bg);
+  border-radius: 14px;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(255, 76, 96, 0.5);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.left, .right {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h2 {
+  margin: 0 0 16px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+}
+#puzzle {
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+  background: #2b2b31;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 76, 96, 0.6);
+  font-size: 3.5rem;
+  user-select: none;
+}
+.tile {
+  background: #3c3c44;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(255, 76, 96, 0.4);
+  transition: background-color 0.3s ease;
+}
+.tile:hover {
+  background-color: #ff4c60;
+}
+.empty {
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: default !important;
+}
+.controls {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+button {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+#moves, #status {
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+  min-height: 1.4em;
+}
+#customization {
+  width: 100%;
+  max-width: 380px;
+  background: #2b2b31;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255, 76, 96, 0.6);
+  display: none;
+  flex-direction: column;
+  gap: 18px;
+}
+#customization label {
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: block;
+}
+.colors, .accessories {
+  display: flex;
+  gap: 12px;
+}
+.color-choice {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  box-shadow: 0 0 8px rgba(255, 76, 96, 0.4);
+  transition: border-color 0.3s ease;
+}
+.color-choice.selected {
+  border-color: var(--accent);
+}
+.accessory-choice {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.accessory-choice.selected {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+#gameCanvas {
+  background: #2b2b31;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 76, 96, 0.7);
+  margin-top: 20px;
+  display: none;
+  max-width: 100%;
+}
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  width: 100%;
+}
