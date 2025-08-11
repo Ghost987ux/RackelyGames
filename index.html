@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quebra-cabeça com Emoji + Jogo Personalizado</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container" role="main" aria-label="Quebra-cabeça para liberar o jogo e personalização">
+  <section class="left" aria-label="Quebra-cabeça">
+    <h2>Quebra-cabeça</h2>
+    <div id="puzzle" aria-describedby="moves status"></div>
+    <div class="controls" role="group" aria-label="Controles do quebra-cabeça">
+      <button id="btnShuffle" type="button">Embaralhar</button>
+      <button id="btnReset" type="button">Resetar</button>
+      <button id="btnSolve" type="button">Resolver automático</button>
+    </div>
+    <div id="moves" aria-live="polite" role="status">Movimentos: 0</div>
+    <div id="status" aria-live="polite" role="status"></div>
+  </section>
+  <section class="right" aria-label="Personalização e jogo">
+    <h2>Personalização</h2>
+    <div id="customization" aria-label="Personalização do personagem">
+      <label for="colorOptions">Escolha a cor do personagem:</label>
+      <div id="colorOptions" class="colors" role="list" tabindex="0" aria-label="Opções de cor">
+        <div class="color-choice selected" role="listitem" tabindex="0" aria-label="Vermelho" data-color="#ff4c60" style="background:#ff4c60"></div>
+        <div class="color-choice" role="listitem" tabindex="0" aria-label="Azul" data-color="#4c84ff" style="background:#4c84ff"></div>
+        <div class="color-choice" role="listitem" tabindex="0" aria-label="Verde" data-color="#4cff6b" style="background:#4cff6b"></div>
+        <div class="color-choice" role="listitem" tabindex="0" aria-label="Amarelo" data-color="#ffde4c" style="background:#ffde4c"></div>
+      </div>
+
+      <label for="accessoryOptions">Escolha um acessório:</label>
+      <div id="accessoryOptions" class="accessories" role="list" tabindex="0" aria-label="Opções de acessórios">
+        <button class="accessory-choice selected" role="listitem" tabindex="0" data-acc="none" aria-pressed="true">Nenhum</button>
+        <button class="accessory-choice" role="listitem" tabindex="0" data-acc="hat" aria-pressed="false">Chapéu 🎩</button>
+        <button class="accessory-choice" role="listitem" tabindex="0" data-acc="glasses" aria-pressed="false">Óculos 🕶️</button>
+        <button class="accessory-choice" role="listitem" tabindex="0" data-acc="mask" aria-pressed="false">Máscara 😷</button>
+      </div>
+
+      <button id="btnStartGame" type="button" style="margin-top:20px;">Começar Jogo</button>
+    </div>
+    <canvas id="gameCanvas" width="480" height="360" aria-label="Tela do jogo"></canvas>
+  </section>
+</main>
+<footer>Feito com ❤️ de Rodrigo para Rackely</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
